@@ -21,15 +21,17 @@ public class checkValues extends AppCompatActivity {
         TextView Job = findViewById(R.id.Jobblock);
 
         Intent intent = getIntent();
-        Bundle b = intent.getExtras();
+        Bundle bundle = intent.getExtras();
+        String a = bundle.getString("NAME");
+        String b = bundle.getString("BIO");
+        String c = bundle.getString("AGE");
+        String d = bundle.getString("WORK");
 
 
-
-
-        Name.setText(b.getString(Constants.NAME));
-        Bio.setText(b.getString(Constants.BIO));
-        Age.setText(b.getString(Constants.AGE));
-        Job.setText(b.getString(Constants.WORK));
+        Name.setText(a);
+        Bio.setText(b);
+        Age.setText(c);
+        Job.setText(d);
 
 
 

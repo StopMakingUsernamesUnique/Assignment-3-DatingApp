@@ -13,6 +13,9 @@ import java.text.ParseException;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,13 +43,20 @@ public class MainActivity extends AppCompatActivity {
 
         if( !(Bio.getText().toString().isEmpty()) && !(Name.getText().toString().isEmpty()) && !(Work.getText().toString().isEmpty()) && !(Age.getText().toString().isEmpty())) {
 
-
+            Bundle extras = new Bundle();
 
             Intent intent = new Intent(MainActivity.this, checkValues.class);
-            intent.putExtra(Constants.NAME, Name.getText().toString());
-            intent.putExtra(Constants.BIO, Bio.getText().toString());
-            intent.putExtra(Constants.AGE, Age.getText().toString());
-            intent.putExtra(Constants.WORK, Work.getText().toString());
+
+            String a = Name.getText().toString();
+            String b = Bio.getText().toString();
+            String c = Age.getText().toString();
+            String d = Work.getText().toString();
+            extras.putString("NAME", a);
+            extras.putString("BIO", b);
+            extras.putString("AGE", c);
+            extras.putString("WORK", d);
+
+            intent.putExtras(extras);
 
             Bio.setText("");
             Name.setText("");

@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.widget.DatePicker;
 
+import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -51,7 +52,7 @@ public class MainActivityTest {
         onView(withId(R.id.Work)).perform(click())
                 .perform(typeText("Barry Work"));
 
-        onView(withId(R.id.Submit)).perform(click());
+        onView(withId(R.id.Submit)).perform(ViewActions.scrollTo()).perform(click());
 
         onView(withId(R.id.Bioplate)).check(matches(withText(R.string.about_me)));
         onView(withId(R.id.Jobplate)).check(matches(withText(R.string.my_field)));
@@ -59,7 +60,9 @@ public class MainActivityTest {
         onView(withId(R.id.Nameplate)).check(matches(withText("Barry")));
         onView(withId(R.id.Ageplate)).check(matches(withText("42")));
         onView(withId(R.id.Bioblock)).check(matches(withText("Barry Bio")));
-        onView(withId(R.id.Nameplate)).check(matches(withText("Barry Work")));
+        onView(withId(R.id.Jobblock)).check(matches(withText("Barry Work")));
+
+
 
     }
 }
