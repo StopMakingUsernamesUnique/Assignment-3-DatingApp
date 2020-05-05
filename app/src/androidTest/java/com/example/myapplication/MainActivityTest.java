@@ -56,6 +56,8 @@ public class MainActivityTest {
 
         onView(withId(R.id.Bioplate)).check(matches(withText(R.string.about_me)));
         onView(withId(R.id.Jobplate)).check(matches(withText(R.string.my_field)));
+        onView(withId(R.id.Submit2)).check(matches(isDisplayed()));
+        onView(withId(R.id.java)).check(matches(isDisplayed()));
 
         onView(withId(R.id.Nameplate)).check(matches(withText("Barry")));
         onView(withId(R.id.Ageplate)).check(matches(withText("42")));
