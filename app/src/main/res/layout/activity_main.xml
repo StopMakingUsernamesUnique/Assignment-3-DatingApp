@@ -4,15 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+android:theme="@android:style/Theme.DeviceDefault.Light">
+
+
 
     <TextView
+        android:id="@+id/Coffee"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/coffee_dates"
+        android:textSize="30dp"
+        android:padding="2dp"
+        android:layout_margin="7dp"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/coffee"
+        />
+
+    <TextView
+        android:id="@+id/Image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sign_up"
+        android:textSize="25dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
+
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="20dp"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Age"
+        android:inputType="number"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="20dp"
+        android:hint="Age"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Work"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="20dp"
+        android:hint="Place of Work"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Bio"
+        android:layout_width="252dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="20dp"
+        android:hint="Bio"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/Submit"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginBottom="80dp"
+        android:hint="@string/submit"
+        android:onClick="toCheckValues" />
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
