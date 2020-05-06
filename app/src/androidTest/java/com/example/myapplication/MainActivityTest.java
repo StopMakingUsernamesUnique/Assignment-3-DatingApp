@@ -14,6 +14,7 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -43,6 +44,9 @@ public class MainActivityTest {
 
     @Test
     public void hasSecondActivity() {
+        onView(withId(R.id.Submit)).perform(ViewActions.scrollTo()).perform(click());
+        onView(withId(R.id.Name)).check(matches(hasErrorText("Empty Field")));
+
         onView(withId(R.id.Name)).perform(click())
                 .perform(typeText("Barry"));
         onView(withId(R.id.Age)).perform(click())
@@ -63,6 +67,9 @@ public class MainActivityTest {
         onView(withId(R.id.Ageplate)).check(matches(withText("42")));
         onView(withId(R.id.Bioblock)).check(matches(withText("Barry Bio")));
         onView(withId(R.id.Jobblock)).check(matches(withText("Barry Work")));
+
+        onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
+        onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
 
 
 
