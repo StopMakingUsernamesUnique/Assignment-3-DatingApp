@@ -18,6 +18,10 @@ android:theme="@android:style/Theme.DeviceDefault.Light">
 
 
 
+
+
+
+
     <TextView
         android:id="@+id/Coffee"
         android:layout_width="wrap_content"
