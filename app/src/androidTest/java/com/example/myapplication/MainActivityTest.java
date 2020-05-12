@@ -70,8 +70,7 @@ public class MainActivityTest {
         onView(withId(R.id.matches)).check(matches(withText(R.string.datingapp_matches)));
         onView(withText("Profile")).perform(click());
 
-        onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
-        onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
+       
 
 
     }
