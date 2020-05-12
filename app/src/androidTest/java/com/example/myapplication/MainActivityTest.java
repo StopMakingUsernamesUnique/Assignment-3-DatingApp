@@ -60,8 +60,8 @@ public class MainActivityTest {
 
         onView(withId(R.id.Bioplate)).check(matches(withText(R.string.about_me)));
         onView(withId(R.id.Jobplate)).check(matches(withText(R.string.my_field)));
-        onView(withId(R.id.Submit2)).check(matches(isDisplayed()));
-        onView(withId(R.id.java)).check(matches(isDisplayed()));
+        onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.java)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
 
 
         onView(withText("Settings")).perform(click());
@@ -70,7 +70,8 @@ public class MainActivityTest {
         onView(withId(R.id.matches)).check(matches(withText(R.string.datingapp_matches)));
         onView(withText("Profile")).perform(click());
 
-       
+        onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
+        onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
 
 
     }
