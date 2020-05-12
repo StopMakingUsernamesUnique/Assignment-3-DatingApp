@@ -6,4 +6,6 @@
     <string name="my_field">My Field:</string>
     <string name="about_me">About me:</string>
     <string name="go_back">Go Back</string>
+    <string name="datingapp_settings">DatingApp Settings</string>
+    <string name="datingapp_matches">DatingApp Matches</string>
 </resources>

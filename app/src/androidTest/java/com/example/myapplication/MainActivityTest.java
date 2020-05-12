@@ -63,13 +63,18 @@ public class MainActivityTest {
         onView(withId(R.id.Submit2)).check(matches(isDisplayed()));
         onView(withId(R.id.java)).check(matches(isDisplayed()));
 
-        onView(withId(R.id.Nameplate)).check(matches(withText("Barry")));
-        onView(withId(R.id.Ageplate)).check(matches(withText("42")));
-        onView(withId(R.id.Bioblock)).check(matches(withText("Barry Bio")));
-        onView(withId(R.id.Jobblock)).check(matches(withText("Barry Work")));
+
+        onView(withText("Settings")).perform(click());
+        onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
+        onView(withText("Matches")).perform(click());
+        onView(withId(R.id.matches)).check(matches(withText(R.string.datingapp_matches)));
+        onView(withText("Profile")).perform(click());
 
         onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
         onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
+
+
+
 
 
 
