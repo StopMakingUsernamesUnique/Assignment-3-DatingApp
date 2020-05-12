@@ -74,9 +74,5 @@ public class MainActivityTest {
         onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
 
 
-
-
-
-
     }
 }
