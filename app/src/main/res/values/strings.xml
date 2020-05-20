@@ -8,4 +8,20 @@
     <string name="go_back">Go Back</string>
     <string name="datingapp_settings">DatingApp Settings</string>
     <string name="datingapp_matches">DatingApp Matches</string>
+    <string name="derick">Derick</string>
+    <string-array name="Match_Names">
+        <item>Jessica</item>
+        <item>Mark</item>
+        <item>Fiona</item>
+        <item>Chuck</item>
+    </string-array>
+    <string-array name="Match_Ages">
+        <item>23</item>
+    <item>42</item>
+    <item>52</item>
+    <item>80</item>
+    </string-array>
+
+
+
 </resources>

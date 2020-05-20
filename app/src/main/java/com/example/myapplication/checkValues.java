@@ -1,7 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
@@ -21,10 +24,14 @@ import java.util.List;
 public class checkValues extends AppCompatActivity {
     private SectionsPageAdapter SPA;
     private ViewPager VP;
+    public static final String MY_SHARED_PREFERENCES = "MySharedPrefs" ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+
+
 
         SPA = new SectionsPageAdapter(getSupportFragmentManager());
         VP = (ViewPager) findViewById(R.id.view_pager);
@@ -32,7 +39,16 @@ public class checkValues extends AppCompatActivity {
 
         TabLayout TB = (TabLayout) findViewById(R.id.tabs);
         TB.setupWithViewPager(VP);
+
+
+
     }
+    public Bundle getMyData(){
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        return bundle;
+    }
+
 
     public void toMainActivity(View view) {
 

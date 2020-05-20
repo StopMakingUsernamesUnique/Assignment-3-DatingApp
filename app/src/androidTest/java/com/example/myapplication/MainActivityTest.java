@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-import android.widget.DatePicker;
-
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -16,10 +14,8 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.equalTo;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -60,6 +56,10 @@ public class MainActivityTest {
 
         onView(withId(R.id.Bioplate)).check(matches(withText(R.string.about_me)));
         onView(withId(R.id.Jobplate)).check(matches(withText(R.string.my_field)));
+        onView(withId(R.id.Ageplate)).check(matches(withText("42")));
+        onView(withId(R.id.Nameplate)).check(matches(withText("Barry")));
+        onView(withId(R.id.Jobblock)).check(matches(withText("Barry Work")));
+        onView(withId(R.id.Bioblock)).check(matches(withText("Barry Bio")));
         onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
         onView(withId(R.id.java)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
 
@@ -67,7 +67,6 @@ public class MainActivityTest {
         onView(withText("Settings")).perform(click());
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
         onView(withText("Matches")).perform(click());
-        onView(withId(R.id.matches)).check(matches(withText(R.string.datingapp_matches)));
         onView(withText("Profile")).perform(click());
 
         onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
