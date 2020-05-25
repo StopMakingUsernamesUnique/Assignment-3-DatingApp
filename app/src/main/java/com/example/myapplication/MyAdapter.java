@@ -39,10 +39,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
 
-
-
-
-
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
@@ -75,9 +71,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             text2 = itemView.findViewById(R.id.MatchAge);
             image1 = itemView.findViewById(R.id.MatchImage);
             btn = itemView.findViewById(R.id.MatchButton);
-
-
-
         }
     }
 }
