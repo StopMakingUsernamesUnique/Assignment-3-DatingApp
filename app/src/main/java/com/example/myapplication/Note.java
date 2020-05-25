@@ -12,7 +12,7 @@ public class Note {
     }
 
 
-    public Note( String name, String age, String bio, String work){
+    public Note( String work, String name, String bio, String age){
 
         this.name = name;
         this.age = age;

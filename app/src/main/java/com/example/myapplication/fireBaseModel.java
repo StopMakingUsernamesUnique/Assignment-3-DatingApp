@@ -22,6 +22,7 @@ import com.google.gson.JsonElement;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static android.content.ContentValues.TAG;
 
@@ -33,7 +34,7 @@ public class fireBaseModel {
 
     public fireBaseModel() {
             db = FirebaseFirestore.getInstance();
-            matchRef = db.collection("match");
+            matchRef = db.collection("matchData");
 
         }
 
@@ -46,19 +47,21 @@ public class fireBaseModel {
                                 note = new Note[task.getResult().size()];
                                 int i = 0;
                                 for (QueryDocumentSnapshot document : task.getResult()) {
-                                    Gson gson = new Gson();
-                                    JsonElement jsonElement = gson.toJsonTree(document.getData());
-                                    note[i] = gson.fromJson(jsonElement, Note.class);
-                                    Log.d(TAG, "DocumentSnapshot data: " + note[i]);
+                                    Log.d(TAG, document.getId() + " => " + document.getData());
+                                    note[i] = document.toObject(Note.class);
+                                    Log.v(TAG, "DocumentSnapshot data: " + note[i].getName());
+                                    i++;
                                 }
-
+                                
                             } else {
                                 Log.d(TAG, "Error getting documents: ", task.getException());
                             }
+
                         }
                     });
-            return note;
 
+            Log.v(TAG, "DocumentSnapshot data: " + note[0].getName());
+            return note;
     }
 
 

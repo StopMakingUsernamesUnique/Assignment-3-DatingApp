@@ -20,10 +20,8 @@ public class fragmentSettings extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         TextView t = (TextView) view.findViewById(R.id.settings);
 
-        viewModel = new FirebaseMatchViewModel();
-        names = viewModel.getNames();
-        t.setText(names[1]);
 
+            viewModel = new FirebaseMatchViewModel();
 
 
 
