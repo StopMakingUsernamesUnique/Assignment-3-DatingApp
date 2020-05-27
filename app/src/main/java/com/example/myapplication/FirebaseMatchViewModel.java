@@ -1,7 +1,13 @@
 package com.example.myapplication;
+import android.util.Log;
 
+import java.lang.Object.*;
+import java.util.function.Consumer;
+
+import static android.content.ContentValues.TAG;
 
 public class FirebaseMatchViewModel {
+
 
     private Note[] notes;
     private fireBaseModel fb;
@@ -10,20 +16,27 @@ public class FirebaseMatchViewModel {
     private Boolean[] likes;
 
     public FirebaseMatchViewModel() {
+
         fb = new fireBaseModel();
-        fb.getMatchData(new onReceivedListener() {
-            @Override
-            public void onReceived(Note[] note) {
-                notes = note;
-            }
-        });
     }
+
+        public void getData(Consumer<Note[]> responseCallback){
+
+            fb.getMatchData(note -> {
+
+                notes = note;
+
+                Log.v(TAG, "DocumentSnapshot data: " + notes[0].getName());
+
+                responseCallback.accept(notes);
+            });
+        }
 
 
     public String[] getNames() {
 
         names = new String[notes.length];
-        for (int i = 0; i < notes.length - 1; i++) {
+        for (int i = 0; i < notes.length; i++) {
             names[i] = notes[i].getName();
         }
         return names;
@@ -33,7 +46,7 @@ public class FirebaseMatchViewModel {
     public String[] getImageUrls() {
 
         imageUrls = new String[notes.length];
-        for (int i = 0; i < notes.length - 1; i++) {
+        for (int i = 0; i < notes.length; i++) {
             imageUrls[i] = notes[i].getImageUrl();
         }
         return imageUrls;
@@ -42,7 +55,7 @@ public class FirebaseMatchViewModel {
     public Boolean[] getLikes() {
 
         likes = new Boolean[notes.length];
-        for (int i = 0; i < notes.length - 1; i++) {
+        for (int i = 0; i < notes.length; i++) {
             likes[i] = notes[i].getLiked();
         }
         return likes;

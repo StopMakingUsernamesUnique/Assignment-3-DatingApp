@@ -12,6 +12,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import static android.content.ContentValues.TAG;
+import static java.nio.file.Paths.get;
 
 public class fireBaseModel {
 
@@ -22,6 +23,10 @@ public class fireBaseModel {
     public fireBaseModel() {
             db = FirebaseFirestore.getInstance();
             matchRef = db.collection("matchData2");
+
+        }
+
+        public void like(String name){
 
         }
 

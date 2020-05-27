@@ -20,11 +20,6 @@ public class fragmentSettings extends Fragment {
 
 
 
-
-
-
-
-
         return view;
 
     }
