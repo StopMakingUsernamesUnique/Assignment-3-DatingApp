@@ -74,12 +74,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
 
-
-
-
-
-    
-
     @Override
     public int getItemCount() {
         return images.length;
@@ -96,4 +90,5 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             btn = itemView.findViewById(R.id.MatchButton);
         }
     }
+
 }

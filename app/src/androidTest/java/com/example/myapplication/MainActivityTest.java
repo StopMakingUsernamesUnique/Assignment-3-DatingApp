@@ -1,5 +1,8 @@
 package com.example.myapplication;
 
+import android.view.View;
+
+import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.action.ViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -8,14 +11,18 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static android.app.PendingIntent.getActivity;
+import static android.service.autofill.Validators.not;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.is;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -66,7 +73,12 @@ public class MainActivityTest {
 
         onView(withText("Settings")).perform(click());
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
+        onView(withId(R.id.tabs)).check(matches(isDisplayed()));
+        onView(withId(R.id.view_pager)).check(matches(isDisplayed()));
         onView(withText("Matches")).perform(click());
+        onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
+
+
         onView(withText("Profile")).perform(click());
 
         onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());

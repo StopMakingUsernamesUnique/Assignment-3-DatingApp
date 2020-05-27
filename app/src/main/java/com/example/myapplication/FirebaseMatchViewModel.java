@@ -30,6 +30,7 @@ public class FirebaseMatchViewModel {
                 Log.v(TAG, "DocumentSnapshot data: " + notes[0].getName());
 
                 responseCallback.accept(notes);
+                
             });
         }
 
