@@ -7,11 +7,16 @@ import androidx.annotation.NonNull;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static android.content.ContentValues.TAG;
+import static androidx.core.app.ActivityCompat.recreate;
 import static java.nio.file.Paths.get;
 
 public class fireBaseModel {
@@ -19,6 +24,7 @@ public class fireBaseModel {
     private FirebaseFirestore db;
     private Note[] note;
     private CollectionReference matchRef;
+    private DocumentReference doc;
 
     public fireBaseModel() {
             db = FirebaseFirestore.getInstance();
@@ -27,6 +33,8 @@ public class fireBaseModel {
         }
 
         public void like(String name){
+           doc = matchRef.document(name);
+            doc.update("liked", true );
 
         }
 

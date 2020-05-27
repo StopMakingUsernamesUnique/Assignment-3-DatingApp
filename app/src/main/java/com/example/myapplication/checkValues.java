@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.myapplication.R;
@@ -24,6 +25,7 @@ import java.util.List;
 public class checkValues extends AppCompatActivity {
     private SectionsPageAdapter SPA;
     private ViewPager VP;
+    SwipeRefreshLayout sw;
     public static final String MY_SHARED_PREFERENCES = "MySharedPrefs" ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,8 @@ public class checkValues extends AppCompatActivity {
         finish();
 
     }
+
+
 
     private void setupViewPager(ViewPager viewpager){
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());

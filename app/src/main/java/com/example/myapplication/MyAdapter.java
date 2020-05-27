@@ -20,21 +20,26 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.function.Consumer;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     String data1[];
     Boolean data2[];
     String images[];
+    String UID[];
     Context context;
     Button btn;
+    FirebaseMatchViewModel fb = new FirebaseMatchViewModel();
 
 
-    public MyAdapter(Context ct, String[] s1, Boolean[] s2, String[] img){
+
+    public MyAdapter(Context ct, String[] s1, Boolean[] s2, String[] img, String[] uid){
     context = ct;
     data1 = s1;
     data2= s2;
     images = img;
+    UID = uid;
     }
 
 
@@ -52,12 +57,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View itemView) {
-                int pos = holder.getAdapterPosition();
-                Toast.makeText(itemView.getContext(), "You liked " + data1[pos], Toast.LENGTH_LONG).show();
-            }
+        btn.setOnClickListener(itemView -> {
+            int pos = holder.getAdapterPosition();
+            Toast.makeText(itemView.getContext(), "You liked " + data1[pos], Toast.LENGTH_LONG).show();
+            fb.like(UID[position]);
+
         });
 
         holder.text1.setText(data1[position]);
@@ -65,10 +69,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         if(data2[position] != null && data2[position]) {
             holder.text2.setText("Liked");
         }
-
-
+        Picasso.get().load(images[position]).into(holder.image1);
 
     }
+
+
+
+
+
 
     
 

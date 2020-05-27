@@ -20,14 +20,15 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             />
+
         <TextView
             android:id="@+id/MatchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
-            android:textSize="25dp"
+            android:layout_marginTop="130dp"
             android:padding="20dp"
-            android:text="@string/derick" />
+            android:text="@string/derick"
+            android:textSize="25dp" />
 
         <TextView
             android:id="@+id/MatchAge"
@@ -47,6 +48,8 @@
             android:text="Like"
             android:layout_gravity="end"
             android:layout_marginTop="150dp"
+            android:onClick="toMainActivity"
+
             />
 
 

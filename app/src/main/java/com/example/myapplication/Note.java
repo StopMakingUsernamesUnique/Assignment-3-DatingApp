@@ -26,4 +26,5 @@ public class Note {
     public Boolean getLiked(){return liked;}
     public String getLat(){return lat;}
     public String getLong(){return longitude;}
+    public String getUid(){return uid;}
 }

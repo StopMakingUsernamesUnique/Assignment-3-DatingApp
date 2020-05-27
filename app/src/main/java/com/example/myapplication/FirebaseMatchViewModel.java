@@ -14,6 +14,7 @@ public class FirebaseMatchViewModel {
     private String[] names;
     private String[] imageUrls;
     private Boolean[] likes;
+    private String[] UID;
 
     public FirebaseMatchViewModel() {
 
@@ -62,6 +63,18 @@ public class FirebaseMatchViewModel {
     }
 
 
+    public String[] getUid() {
+        UID = new String[notes.length];
+        for (int i = 0; i < notes.length; i++) {
+            UID[i] = notes[i].getUid();
+        }
+        return UID;
+    }
+
+    public void like(String s){
+        fb.like(s);
+
+    }
 
 }
 
