@@ -1,26 +1,29 @@
 package com.example.myapplication;
 
-import android.content.Context;
-import android.widget.Button;
-
 public class Note {
 
-    String name, age, bio, work;
+    String imageUrl, name, uid, lat, longitude;
+    Boolean liked;
 
     public Note() {
         //empty constructor
     }
 
 
-    public Note( String work, String name, String bio, String age){
-
+    public Note( String imageUrl, Boolean liked, String name, String uid, String lat, String longitude){
+        this.imageUrl = imageUrl;
         this.name = name;
-        this.age = age;
-        this.bio = bio;
-        this.work = work;
+        this.liked = liked;
+        this.uid = uid;
+        this.lat = lat;
+        this.longitude = longitude;
     }
 
     public String getName() {
         return name;
     }
+    public String getImageUrl(){ return imageUrl;}
+    public Boolean getLiked(){return liked;}
+    public String getLat(){return lat;}
+    public String getLong(){return longitude;}
 }

@@ -12,15 +12,18 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    String data1[], data2[];
-    int images[];
+    String data1[];
+    Boolean data2[];
+    String images[];
     Context context;
     Button btn;
 
 
-    public MyAdapter(Context ct, String[] s1, String[] s2, int[] img){
+    public MyAdapter(Context ct, String[] s1, Boolean[] s2, String[] img){
     context = ct;
     data1 = s1;
     data2= s2;
@@ -51,11 +54,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         });
 
         holder.text1.setText(data1[position]);
-        holder.text2.setText(data2[position]);
-        holder.image1.setImageResource(images[position]);
 
+        if(data2[position]) {
+            holder.text2.setText("Liked");
+        }
 
+        Picasso.get().load(images[position]).into(holder.image1);
     }
+
+    
 
     @Override
     public int getItemCount() {

@@ -1,28 +1,15 @@
 package com.example.myapplication;
 
-import android.provider.ContactsContract;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static android.content.ContentValues.TAG;
 
@@ -34,11 +21,11 @@ public class fireBaseModel {
 
     public fireBaseModel() {
             db = FirebaseFirestore.getInstance();
-            matchRef = db.collection("matchData");
+            matchRef = db.collection("matchData2");
 
         }
 
-        public Note[] getMatchData() {
+        public void getMatchData(final onReceivedListener onReceivedListener) {
             matchRef.get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -52,6 +39,7 @@ public class fireBaseModel {
                                     Log.v(TAG, "DocumentSnapshot data: " + note[i].getName());
                                     i++;
                                 }
+                                onReceivedListener.onReceived(note);
                                 
                             } else {
                                 Log.d(TAG, "Error getting documents: ", task.getException());
@@ -60,8 +48,7 @@ public class fireBaseModel {
                         }
                     });
 
-            Log.v(TAG, "DocumentSnapshot data: " + note[0].getName());
-            return note;
+
     }
 
 
