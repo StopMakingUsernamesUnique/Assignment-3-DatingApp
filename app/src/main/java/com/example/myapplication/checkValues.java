@@ -26,7 +26,7 @@ public class checkValues extends AppCompatActivity {
     private SectionsPageAdapter SPA;
     private ViewPager VP;
     SwipeRefreshLayout sw;
-    public static final String MY_SHARED_PREFERENCES = "MySharedPrefs" ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +62,9 @@ public class checkValues extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewpager){
         SectionsPageAdapter adapter = new SectionsPageAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fragmentProfile(), "Profile");
-        adapter.addFragment(new fragmentSettings(), "Settings");
-        adapter.addFragment(new fragmentMatches(), "Matches");
+        adapter.addFragment(new fragmentProfile(), getString(R.string.Profile));
+        adapter.addFragment(new fragmentSettings(), getString(R.string.Settings));
+        adapter.addFragment(new fragmentMatches(), getString(R.string.Matches));
         viewpager.setAdapter(adapter);
     }
 

@@ -49,7 +49,7 @@ public class fireBaseModel {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
                                     note[i] = document.toObject(Note.class);
-                                    Log.v(TAG, "DocumentSnapshot data: " + note[i].getName());
+
                                     i++;
                                 }
                                 onReceivedListener.onReceived(note);

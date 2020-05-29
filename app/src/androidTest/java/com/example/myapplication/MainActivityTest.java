@@ -82,7 +82,7 @@ public class MainActivityTest {
         onView(withText("Profile")).perform(click());
 
         onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
-        onView(withId(R.id.MainActivity)).check(matches(isDisplayed()));
+
 
 
     }

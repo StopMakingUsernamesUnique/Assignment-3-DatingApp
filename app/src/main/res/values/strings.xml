@@ -9,6 +9,26 @@
     <string name="datingapp_settings">DatingApp Settings</string>
     <string name="datingapp_matches">DatingApp Matches</string>
     <string name="derick">Derick</string>
+    <string name="defaultAge">32</string>
+    <string name="age">Age</string>
+    <string name="place_of_work">Place of Work</string>
+    <string name="bio">Bio</string>
+    <string name="MySharedPrefs">MySharedPrefs</string>
+    <string name="Profile">Profile</string>
+    <string name="Settings">Settings</string>
+    <string name="Matches">Matches</string>
+
+
+
+
+    <string name="Empty">Empty Field</string>
+    <string name="Name">NAME</string>
+    <string name="Bio">BIO</string>
+    <string name="Age">AGE</string>
+    <string name="Work">WORK</string>
+    <string name="youlike">\"You liked \"</string>
+    <string name="like">Liked</string>
+    <string name="name">Name</string>
     <string-array name="Match_Names">
         <item>Jessica</item>
         <item>Mark</item>

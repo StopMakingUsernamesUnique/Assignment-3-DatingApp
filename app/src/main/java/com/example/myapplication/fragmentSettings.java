@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class fragmentSettings extends Fragment {
-    private static final String TAG = "fragmentSettings";
+
 
 
     @Nullable

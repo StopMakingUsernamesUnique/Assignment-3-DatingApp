@@ -11,8 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 public class fragmentProfile extends Fragment {
-    private static final String TAG = "fragmentProfile";
-    public static final String MY_SHARED_PREFERENCES = "MySharedPrefs" ;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -21,10 +20,10 @@ public class fragmentProfile extends Fragment {
 
         checkValues activity = (checkValues) getActivity();
         Bundle bundle = activity.getMyData();
-        String a = bundle.getString("NAME");
-        String b = bundle.getString("AGE");
-        String c = bundle.getString("BIO");
-        String d = bundle.getString("WORK");
+        String a = bundle.getString(getString(R.string.Name));
+        String b = bundle.getString(getString(R.string.Age));
+        String c = bundle.getString(getString(R.string.Bio));
+        String d = bundle.getString(getString(R.string.Work));
 
 
         TextView name = (TextView) view.findViewById(R.id.Nameplate);

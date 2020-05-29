@@ -9,35 +9,35 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="10dp"
-        card_view:cardCornerRadius="4dp"
+        android:layout_height="@dimen/CardHeight"
+        android:layout_margin="@dimen/CardMargin"
+        card_view:cardCornerRadius="@dimen/cardRadius"
         card_view:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="10dp">
+        >
 
         <ImageView
             android:id="@+id/MatchImage"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="@dimen/ImageHeight"
             />
 
         <TextView
             android:id="@+id/MatchName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
-            android:padding="20dp"
+            android:layout_marginTop="@dimen/MatchNameMarginTop"
+            android:padding="@dimen/MatchNamePadding"
             android:text="@string/derick"
-            android:textSize="25dp" />
+            android:textSize="@dimen/MatchNameSize" />
 
         <TextView
             android:id="@+id/MatchAge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:padding="20dp"
-            android:layout_marginTop="80dp"
-            android:textSize="25dp" />
+            android:padding="@dimen/MatchAgePad"
+            android:layout_marginTop="@dimen/MatchAgeMarginTop"
+            android:textSize="@dimen/MatchAgeSize" />
 
 
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:text="Like"
             android:layout_gravity="end"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="@dimen/MatchButtonMarginTop"
             android:onClick="toMainActivity"
 
             />

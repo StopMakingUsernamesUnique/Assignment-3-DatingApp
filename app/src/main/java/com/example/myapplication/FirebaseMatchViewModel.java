@@ -27,7 +27,7 @@ public class FirebaseMatchViewModel {
 
                 notes = note;
 
-                Log.v(TAG, "DocumentSnapshot data: " + notes[0].getName());
+
 
                 responseCallback.accept(notes);
                 

@@ -59,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         btn.setOnClickListener(itemView -> {
             int pos = holder.getAdapterPosition();
-            Toast.makeText(itemView.getContext(), "You liked " + data1[pos], Toast.LENGTH_LONG).show();
+            Toast.makeText(itemView.getContext(), context.getString(R.string.youlike) + data1[pos], Toast.LENGTH_LONG).show();
             fb.like(UID[position]);
 
         });
@@ -67,7 +67,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.text1.setText(data1[position]);
 
         if(data2[position] != null && data2[position]) {
-            holder.text2.setText("Liked");
+            holder.text2.setText(context.getString(R.string.like));
         }
         Picasso.get().load(images[position]).into(holder.image1);
 

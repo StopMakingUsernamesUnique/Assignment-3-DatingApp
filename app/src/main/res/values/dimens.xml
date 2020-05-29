@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="agedp">17dp</dimen>
+    <dimen name="java_image">300dp</dimen>
+
+    <dimen name="java_image2">55dp</dimen>
+    <dimen name="nameText">25sp</dimen>
+    <dimen name="nameMargin">30dp</dimen>
+    <dimen name="ageBottom">20dp</dimen>
+    <dimen name="agePlateRight">60dp</dimen>
+    <dimen name="ageSize">35sp</dimen>
+    <dimen name="BioPlateSize">20sp</dimen>
+    <dimen name="BioMargin">20dp</dimen>
+
+    <dimen name="BioplateSize">20sp</dimen>
+
+    <dimen name="BioMargin2">10dp</dimen>
+
+    <dimen name="ButtonSize">150dp</dimen>
+    <dimen name="ButtonHeight">50dp</dimen>
+    <dimen name="Button_Center">125dp</dimen>
+    <dimen name="Button_Buffer">80dp</dimen>
+    <dimen name="MainText">30sp</dimen>
+    <dimen name="MainPad">2dp</dimen>
+    <dimen name="MainMargin">7dp</dimen>
+    <dimen name="image2">80dp</dimen>
+    <dimen name="SignUp">25sp</dimen>
+    <dimen name="SignUpMargin">10dp</dimen>
+    <dimen name="SignUpPad">10dp</dimen>
+    <dimen name="NameWidth">252dp</dimen>
+    <dimen name="NameHeight">42dp</dimen>
+    <dimen name="NameMargin">76dp</dimen>
+    <dimen name="NameMarginTop">20dp</dimen>
+    <dimen name="AgeWidth">252dp</dimen>
+    <dimen name="AgeHeight">42dp</dimen>
+    <dimen name="AgeMargin">76dp</dimen>
+    <dimen name="AgeMarginTop">20dp</dimen>
+    <dimen name="SubmitMarginTop">400dp</dimen>
+    <dimen name="SubmitMarginWidth">150dp</dimen>
+    <dimen name="SubmitWidth">150dp</dimen>
+    <dimen name="SubmitHeight">50dp</dimen>
+    <dimen name="SubmitMarginLeft">125dp</dimen>
+    <dimen name="SubmitMarginBottom">80dp</dimen>
+    <dimen name="CardHeight">200dp</dimen>
+    <dimen name="CardMargin">10dp</dimen>
+    <dimen name="cardRadius">4dp</dimen>
+    <dimen name="MatchNameMarginTop">130dp</dimen>
+    <dimen name="MatchNamePadding">20dp</dimen>
+    <dimen name="MatchNameSize">25sp</dimen>
+    <dimen name="MatchAgePad">20dp</dimen>
+    <dimen name="MatchAgeMarginTop">80dp</dimen>
+    <dimen name="MatchAgeSize">25sp</dimen>
+    <dimen name="MatchButtonMarginTop">150dp</dimen>
+    <dimen name="testPad">20dp</dimen>
+    <dimen name="ImageHeight">150dp</dimen>
+    <dimen name="JavaMarginLeft">165dp</dimen>
+    <dimen name="JavaMarginTop">70dp</dimen>
+    <dimen name="SignUpMarginLeft">40dp</dimen>
+    <dimen name="SignUpMarginTop">150dp</dimen>
+    <dimen name="Name_MarginTop">210dp</dimen>
+    <dimen name="Age_MarginTop">260dp</dimen>
+    <dimen name="Work_MarginTop">310dp</dimen>
+    <dimen name="Bio_MarginTop">355dp</dimen>
+</resources>

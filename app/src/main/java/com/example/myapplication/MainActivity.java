@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity {
         EditText Work = (EditText) findViewById(R.id.Work);
 
         if((Bio.getText().toString().isEmpty())){
-            Bio.setError("Empty Field");
+            Bio.setError(getString(R.string.Empty));
         }
         if((Name.getText().toString().isEmpty())){
-            Name.setError("Empty Field");
+            Name.setError(getString(R.string.Empty));
         }
         if((Age.getText().toString().isEmpty())){
-            Age.setError("Empty Field");
+            Age.setError(getString(R.string.Empty));
         }
         if((Work.getText().toString().isEmpty())){
-            Bio.setError("Empty Field");
+            Bio.setError(getString(R.string.Empty));
         }
 
         if( !(Bio.getText().toString().isEmpty()) && !(Name.getText().toString().isEmpty()) && !(Work.getText().toString().isEmpty()) && !(Age.getText().toString().isEmpty())) {
@@ -51,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
             String b = Bio.getText().toString();
             String c = Age.getText().toString();
             String d = Work.getText().toString();
-            extras.putString("NAME", a);
-            extras.putString("BIO", b);
-            extras.putString("AGE", c);
-            extras.putString("WORK", d);
+            extras.putString(getString(R.string.Name), a);
+            extras.putString(getString(R.string.Bio), b);
+            extras.putString(getString(R.string.Age), c);
+            extras.putString(getString(R.string.Work), d);
 
             intent.putExtras(extras);
 

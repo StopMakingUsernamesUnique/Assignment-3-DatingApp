@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/java"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
-                android:layout_marginLeft="55dp"
-
-                android:src="@drawable/coffee"
-                />
+                android:layout_width="@dimen/java_image"
+                android:layout_height="@dimen/java_image"
+                android:layout_marginLeft="@dimen/java_image2"
+                android:src="@drawable/coffee" />
 
             <TextView
                 android:id="@+id/Nameplate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mark Whalburg"
-                android:textSize="25dp"
+                android:textSize="@dimen/nameText"
                 android:layout_below="@id/java"
-                android:layout_margin="30dp"
+                android:layout_margin="@dimen/nameMargin"
                 />
 
             <TextView
@@ -35,34 +30,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/java"
-                android:layout_marginTop="17dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="@dimen/agedp"
+                android:layout_marginBottom="@dimen/ageBottom"
                 android:layout_alignParentRight="true"
-                android:text="46"
-                android:layout_marginRight="60dp"
-                android:textSize="35dp" />
+                android:text="@string/defaultAge"
+                android:layout_marginRight="@dimen/agePlateRight"
+                android:textSize="@dimen/ageSize" />
 
             <TextView
                 android:id="@+id/Bioplate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_me"
-                android:textSize="20dp"
+                android:textSize="@dimen/BioPlateSize"
                 android:textStyle="bold"
                 android:layout_below="@id/Nameplate"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/BioMargin"
+                android:layout_marginRight="@dimen/BioMargin"
                 />
 
             <TextView
                 android:id="@+id/Bioblock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="@dimen/BioplateSize"
                 android:layout_below="@id/Bioplate"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/BioMargin"
+                android:layout_marginRight="@dimen/BioMargin"
+                android:layout_marginTop="@dimen/BioMargin2"
                 />
 
             <TextView
@@ -70,37 +65,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/my_field"
-                android:textSize="20dp"
+                android:textSize="@dimen/BioplateSize"
                 android:textStyle="bold"
                 android:layout_below="@id/Bioblock"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/BioMargin"
+                android:layout_marginRight="@dimen/BioMargin"
+                android:layout_marginTop="@dimen/BioMargin2"
                 />
 
             <TextView
                 android:id="@+id/Jobblock"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="@dimen/BioplateSize"
                 android:layout_below="@id/Jobplate"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/BioMargin"
+                android:layout_marginRight="@dimen/BioMargin"
+                android:layout_marginTop="@dimen/BioMargin2"
                 />
 
             <Button
                 android:layout_below="@id/Jobblock"
-                android:layout_marginTop="20dp"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/BioMargin"
+                android:layout_width="@dimen/ButtonSize"
+                android:layout_height="@dimen/ButtonHeight"
                 android:id="@+id/Submit2"
-                android:layout_marginLeft="125dp"
-                android:layout_marginBottom="80dp"
-                android:hint="@string/go_back"
-                android:onClick="toMainActivity" />
+                android:layout_marginLeft="@dimen/Button_Center"
+                android:layout_marginBottom="@dimen/Button_Buffer"
+                android:hint="@string/go_back" />
+
         </RelativeLayout>
     </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>

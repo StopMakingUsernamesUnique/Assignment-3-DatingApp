@@ -18,7 +18,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import static androidx.core.app.ActivityCompat.recreate;
 
 public class fragmentMatches extends Fragment {
-    private static final String TAG = "fragmentMatches";
+
     RecyclerView recyclerView;
     MyAdapter myAdapter;
     SwipeRefreshLayout sw;
