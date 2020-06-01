@@ -13,26 +13,26 @@ public class User {
     private int ID;
 
     @ColumnInfo(name = "Max_Distance")
-    private int MaxDistance;
+    private String MaxDistance;
 
     @ColumnInfo(name = "Gender")
     private String Gender;
 
     @ColumnInfo(name = "Age_Range_Low")
-    private int low;
+    private String low;
 
     @ColumnInfo(name = "Age_Range_High")
-    private int high;
+    private String high;
 
     @ColumnInfo(name = "Looking_For")
     private String LookingFor;
 
 
-    public void setMaxDistance(int MaxDistance) {
+    public void setMaxDistance(String MaxDistance) {
         this.MaxDistance = MaxDistance;
     }
 
-    public int getMaxDistance() {
+    public String getMaxDistance() {
         return MaxDistance;
     }
 
@@ -52,13 +52,21 @@ public class User {
         return Gender;
     }
 
-    public void setAgeRange(int low, int high) {
+    public void setLow(String low) {
         this.low = low;
+
+    }
+
+    public void setHigh(String high) {
         this.high = high;
     }
 
-    public String getAgeRange() {
-        return low + "-" + high;
+    public String getLow() {
+        return low;
+    }
+
+    public String getHigh(){
+        return high;
     }
 
     public void setLookingFor(String lookingFor) {

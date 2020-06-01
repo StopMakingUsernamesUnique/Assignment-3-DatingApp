@@ -38,11 +38,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="52dp"
-            android:text="TextView"
+            android:text=""
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/settings"
-            tools:text="20 Miles" />
+            app:layout_constraintTop_toBottomOf="@+id/settings" />
 
         <TextView
             android:id="@+id/textView2"
@@ -50,11 +49,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="112dp"
-            android:text="TextView"
+            android:text=""
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/settings"
-            tools:text="20 Miles" />
+            app:layout_constraintTop_toBottomOf="@+id/settings" />
 
         <TextView
             android:id="@+id/textView3"
@@ -62,11 +60,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="284dp"
-            android:text="TextView"
+            android:text=""
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/settings"
-            tools:text="20 Miles" />
+            app:layout_constraintTop_toBottomOf="@+id/settings" />
 
         <TextView
             android:id="@+id/textView5"
@@ -74,11 +71,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="228dp"
-            android:text="TextView"
+            android:text=""
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/settings"
-            tools:text="20 Miles" />
+            app:layout_constraintTop_toBottomOf="@+id/settings" />
 
         <TextView
             android:id="@+id/textView4"
@@ -86,11 +82,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="52dp"
             android:layout_marginTop="168dp"
-            android:text="TextView"
+            android:text="waw"
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
-            app:layout_constraintTop_toBottomOf="@+id/settings"
-            tools:text="20 Miles" />
+            app:layout_constraintTop_toBottomOf="@+id/settings" />
 
         <EditText
             android:id="@+id/editText3"

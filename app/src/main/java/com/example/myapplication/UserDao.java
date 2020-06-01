@@ -15,10 +15,17 @@ import androidx.room.Update;
 
 import com.example.myapplication.User;
 
+import java.util.List;
+
 @Dao
 public interface UserDao {
 
+    @Query("SELECT * FROM user WHERE ID IN (:id)")
+    LiveData<List<User>> loadAllByIds(String[] id);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(com.example.myapplication.User[] user);
+    void insert(User[] user);
+
+    @Delete
+    void delete(User[] user);
 }
