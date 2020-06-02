@@ -18,6 +18,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -74,17 +75,36 @@ public class MainActivityTest {
         onView(withText("Settings")).perform(click());
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
         onView(withId(R.id.tabs)).check(matches(isDisplayed()));
-        onView(withId(R.id.view_pager)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView2)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView3)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView4)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView5)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText3)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText4)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText5)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText6)).check(matches(isDisplayed()));
+        onView(withId(R.id.editText7)).check(matches(isDisplayed()));
+
         onView(withText("Matches")).perform(click());
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
 
 
-        onView(withText("Profile")).perform(click());
-
-        onView(withId(R.id.Submit2)).perform(ViewActions.scrollTo()).perform(click());
 
 
+        onView(withRecyclerView(R.id.RecyclerView).atPosition(3))
+                .check(matches(hasDescendant(isDisplayed())));
 
+
+
+
+
+
+    }
+
+    public static RecyclerViewMatcher withRecyclerView(final int recyclerViewId) {
+            return new RecyclerViewMatcher(recyclerViewId);
     }
 
 

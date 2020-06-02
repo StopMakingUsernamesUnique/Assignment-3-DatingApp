@@ -13,7 +13,7 @@ import java.util.List;
 public class UserViewModel extends ViewModel {
 
 
-    public void insert(Context context, User... User) {
+    public void update(Context context, User... User) {
         AppDatabase db = AppDatabaseSingleton.getDatabase(context);
         db.getTransactionExecutor().execute(() -> {
             db.userDao().insert(User);

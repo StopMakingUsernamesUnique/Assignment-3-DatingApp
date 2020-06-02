@@ -35,6 +35,11 @@ public class checkValues extends AppCompatActivity {
     EditText Preference;
     EditText Gender;
     EditText Min;
+    TextView DistanceT;
+    TextView MaxT;
+    TextView MinT;
+    TextView PreferenceT;
+    TextView GenderT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,23 +54,16 @@ public class checkValues extends AppCompatActivity {
         TB.setupWithViewPager(VP);
 
 
-
-         Distance = (EditText) findViewById(R.id.editText);
-         Max = (EditText) findViewById(R.id.editText5);
-         Min = (EditText) findViewById(R.id.editText6);
-         Preference = (EditText) findViewById(R.id.editText7);
-         Gender = (EditText) findViewById(R.id.editText3);
-
-        TextView DistanceT = (TextView) findViewById(R.id.textView);
-        TextView MaxT = (TextView) findViewById(R.id.textView5);
-        TextView MinT = (TextView) findViewById(R.id.textView4);
-        TextView PreferenceT = (TextView) findViewById(R.id.textView3);
-        TextView GenderT = (TextView) findViewById(R.id.textView2);
+        DistanceT = (TextView) findViewById(R.id.textView);
+        MaxT = (TextView) findViewById(R.id.textView5);
+        MinT = (TextView) findViewById(R.id.textView4);
+         PreferenceT= (TextView) findViewById(R.id.textView3);
+        GenderT = (TextView) findViewById(R.id.textView2);
 
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
         final Observer<List<User>> getUsersObserver = newUsers -> {
-            if (newUsers == null) {
+            if (newUsers == null || newUsers.size() <= 0) {
                 return;
             }
 
@@ -74,13 +72,19 @@ public class checkValues extends AppCompatActivity {
             if (user == null) {
                 return;
             }
+            if(user.getMaxDistance() != null) {
+                DistanceT = (TextView) findViewById(R.id.textView);
+                MaxT = (TextView) findViewById(R.id.textView5);
+                MinT = (TextView) findViewById(R.id.textView4);
+                PreferenceT= (TextView) findViewById(R.id.textView3);
+                GenderT = (TextView) findViewById(R.id.textView2);
 
-            DistanceT.setText(user.getMaxDistance());
-            MinT.setText(user.getLow());
-            MaxT.setText(user.getHigh());
-            PreferenceT.setText(user.getLookingFor());
-            GenderT.setText(user.getGender());
-
+                DistanceT.setText(user.getMaxDistance());
+                MinT.setText(user.getLow());
+                MaxT.setText(user.getHigh());
+                PreferenceT.setText(user.getLookingFor());
+                GenderT.setText(user.getGender());
+            }
         };
         String[] s = {"1"};
         userViewModel.loadAllByIds(this, s).observe(this, getUsersObserver);
@@ -92,6 +96,13 @@ public class checkValues extends AppCompatActivity {
 
 
     public void updateDatabase(View view){
+
+        Distance = (EditText) findViewById(R.id.editText);
+        Max = (EditText) findViewById(R.id.editText5);
+        Min = (EditText) findViewById(R.id.editText6);
+        Preference = (EditText) findViewById(R.id.editText7);
+        Gender = (EditText) findViewById(R.id.editText3);
+
         User user = new User();
         if((Distance.getText().toString().isEmpty())){
             Distance.setError(getString(R.string.Empty));
@@ -109,13 +120,23 @@ public class checkValues extends AppCompatActivity {
             Gender.setError(getString(R.string.Empty));
         }
 
-        else {
+        if(!(Distance.getText().toString().isEmpty()) && !(Max.getText().toString().isEmpty()) && !(Min.getText().toString().isEmpty()) && !(Preference.getText().toString().isEmpty()) && !(Gender.getText().toString().isEmpty())){
             user.setGender(Gender.getText().toString());
             user.setID(1);
             user.setHigh(Max.getText().toString());
             user.setLow(Min.getText().toString());
             user.setLookingFor(Preference.getText().toString());
             user.setMaxDistance(Distance.getText().toString());
+
+            DistanceT.setText(user.getMaxDistance());
+            MinT.setText(user.getLow());
+            MaxT.setText(user.getHigh());
+            PreferenceT.setText(user.getLookingFor());
+            GenderT.setText(user.getGender());
+
+            userViewModel.update(this, user);
+
+
         }
     }
 
