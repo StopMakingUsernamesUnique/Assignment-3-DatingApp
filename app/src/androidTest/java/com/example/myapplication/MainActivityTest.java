@@ -16,6 +16,7 @@ import static android.app.PendingIntent.getActivity;
 import static android.service.autofill.Validators.not;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.scrollTo;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
@@ -31,11 +32,9 @@ import static org.hamcrest.Matchers.is;
 public class MainActivityTest {
 
 
-
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule
             = new ActivityScenarioRule<>(MainActivity.class);
-
 
 
     @Test
@@ -95,19 +94,8 @@ public class MainActivityTest {
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
 
 
-        RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
-        onView(withRecyclerView.atPosition(0))
-                .check(matches(hasDescendant(isDisplayed())));
-
     }
-
-
-
-
-
-
-    }
-
+}
 
 
 
