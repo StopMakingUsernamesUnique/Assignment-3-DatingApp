@@ -52,7 +52,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void hasSecondActivity() {
+    public void hasSecondActivity() throws InterruptedException {
         onView(withId(R.id.Submit)).perform(ViewActions.scrollTo()).perform(click());
         onView(withId(R.id.Name)).check(matches(hasErrorText("Empty Field")));
 
@@ -95,13 +95,13 @@ public class MainActivityTest {
         onView(withText("Matches")).perform(click());
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
 
+        Thread.sleep(10000);
 
         RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
 
 
         onView(withRecyclerView.atPosition(0))
                 .check(matches(hasDescendant(isDisplayed())));
-
 
         onView(withRecyclerView.atPosition(1))
                 .check(matches(hasDescendant(isDisplayed())));

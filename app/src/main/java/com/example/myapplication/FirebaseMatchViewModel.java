@@ -1,7 +1,11 @@
 package com.example.myapplication;
 import android.util.Log;
 
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.lang.Object.*;
+import java.util.ArrayList;
 import java.util.function.Consumer;
 
 import static android.content.ContentValues.TAG;
@@ -18,16 +22,23 @@ class FirebaseMatchViewModel {
     }
 
         void getData(Consumer<Note[]> responseCallback){
-
-            fb.getMatchData(note -> {
-
-                notes = note;
-
-
-
-                responseCallback.accept(notes);
-                
-            });
+            fb.getMatchData(
+                    (QuerySnapshot querySnapshot) -> {
+                        if (querySnapshot != null) {
+                            notes = new Note[querySnapshot.size()];
+                            int i = 0;
+                            for (DocumentSnapshot todoSnapshot : querySnapshot.getDocuments()) {
+                                Note note = todoSnapshot.toObject(Note.class);
+                                assert note != null;
+                                note.uid = todoSnapshot.getId();
+                                notes[i] = note;
+                                i++;
+                            }
+                            responseCallback.accept(notes);
+                        }
+                    },
+                    (databaseError -> System.out.println("Error reading Todo Items: " + databaseError))
+            );
         }
 
 

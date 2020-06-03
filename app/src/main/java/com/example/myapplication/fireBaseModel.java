@@ -3,17 +3,25 @@ package com.example.myapplication;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.core.util.Consumer;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentLinkedQueue;
+
 
 import static android.content.ContentValues.TAG;
 import static androidx.core.app.ActivityCompat.recreate;
@@ -26,10 +34,12 @@ public class fireBaseModel {
     private CollectionReference matchRef;
     private DocumentReference doc;
 
+    private List<ListenerRegistration> listeners;
+
     public fireBaseModel() {
             db = FirebaseFirestore.getInstance();
             matchRef = db.collection("matchData2");
-
+             listeners = new ArrayList<>();
         }
 
         public void like(String name){
@@ -38,7 +48,7 @@ public class fireBaseModel {
 
         }
 
-        public void getMatchData(final onReceivedListener onReceivedListener) {
+    /*    public void getMatchData(final onReceivedListener onReceivedListener) {
             matchRef.get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
@@ -59,10 +69,23 @@ public class fireBaseModel {
                             }
 
                         }
-                    });
+                    }); */
+
+    public void getMatchData(androidx.core.util.Consumer<QuerySnapshot> dataChangedCallback, Consumer<FirebaseFirestoreException> dataErrorCallback) {
+        ListenerRegistration listener = matchRef
+                .addSnapshotListener((queryDocumentSnapshots, e) -> {
+                    if (e != null) {
+                        dataErrorCallback.accept(e);
+                    }
+
+                    dataChangedCallback.accept(queryDocumentSnapshots);
+                });
+
+        listeners.add(listener);
+    }
 
 
     }
 
 
-}
+

@@ -16,6 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.ViewPager;
 
@@ -40,6 +41,7 @@ public class checkValues extends AppCompatActivity {
     TextView MinT;
     TextView PreferenceT;
     TextView GenderT;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +138,11 @@ public class checkValues extends AppCompatActivity {
 
             userViewModel.update(this, user);
 
+            Distance.setText("");
+            Max.setText("");
+            Min.setText("");
+            Preference.setText("");
+            Gender.setText("");
 
         }
     }
