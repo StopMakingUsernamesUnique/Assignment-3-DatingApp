@@ -32,9 +32,11 @@ import static org.hamcrest.Matchers.is;
 public class MainActivityTest {
 
 
+
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule
             = new ActivityScenarioRule<>(MainActivity.class);
+
 
 
     @Test
@@ -94,8 +96,26 @@ public class MainActivityTest {
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
 
 
+        RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
+
+
+        onView(withRecyclerView.atPosition(0))
+                .check(matches(hasDescendant(isDisplayed())));
+
+
+        onView(withRecyclerView.atPosition(1))
+                .check(matches(hasDescendant(isDisplayed())));
+
+
     }
-}
+
+
+
+
+
+
+    }
+
 
 
 
