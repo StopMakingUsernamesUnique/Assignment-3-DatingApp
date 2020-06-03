@@ -34,13 +34,14 @@ public class fragmentMatches extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_matches, container, false);
         viewModel = new FirebaseMatchViewModel();
+        recyclerView = view.findViewById(R.id.RecyclerView);
 
         viewModel.getData((Note[] notes) -> {
             s1 = viewModel.getNames();
             s2 = viewModel.getLikes();
             s3 = viewModel.getUid();
             images = viewModel.getImageUrls();
-            recyclerView = view.findViewById(R.id.RecyclerView);
+
              myAdapter = new MyAdapter(this.getActivity(), s1, s2, images, s3);
             recyclerView.setAdapter(myAdapter);
             recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));

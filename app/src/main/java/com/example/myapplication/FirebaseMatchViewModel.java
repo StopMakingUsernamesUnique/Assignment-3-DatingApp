@@ -6,22 +6,18 @@ import java.util.function.Consumer;
 
 import static android.content.ContentValues.TAG;
 
-public class FirebaseMatchViewModel {
+class FirebaseMatchViewModel {
 
 
     private Note[] notes;
     private fireBaseModel fb;
-    private String[] names;
-    private String[] imageUrls;
-    private Boolean[] likes;
-    private String[] UID;
 
-    public FirebaseMatchViewModel() {
+    FirebaseMatchViewModel() {
 
         fb = new fireBaseModel();
     }
 
-        public void getData(Consumer<Note[]> responseCallback){
+        void getData(Consumer<Note[]> responseCallback){
 
             fb.getMatchData(note -> {
 
@@ -35,9 +31,9 @@ public class FirebaseMatchViewModel {
         }
 
 
-    public String[] getNames() {
+    String[] getNames() {
 
-        names = new String[notes.length];
+        String[] names = new String[notes.length];
         for (int i = 0; i < notes.length; i++) {
             names[i] = notes[i].getName();
         }
@@ -45,18 +41,18 @@ public class FirebaseMatchViewModel {
     }
 
 
-    public String[] getImageUrls() {
+     String[] getImageUrls() {
 
-        imageUrls = new String[notes.length];
+         String[] imageUrls = new String[notes.length];
         for (int i = 0; i < notes.length; i++) {
             imageUrls[i] = notes[i].getImageUrl();
         }
         return imageUrls;
     }
 
-    public Boolean[] getLikes() {
+    Boolean[] getLikes() {
 
-        likes = new Boolean[notes.length];
+        Boolean[] likes = new Boolean[notes.length];
         for (int i = 0; i < notes.length; i++) {
             likes[i] = notes[i].getLiked();
         }
@@ -64,15 +60,15 @@ public class FirebaseMatchViewModel {
     }
 
 
-    public String[] getUid() {
-        UID = new String[notes.length];
+    String[] getUid() {
+        String[] UID = new String[notes.length];
         for (int i = 0; i < notes.length; i++) {
             UID[i] = notes[i].getUid();
         }
         return UID;
     }
 
-    public void like(String s){
+    void like(String s){
         fb.like(s);
 
     }
