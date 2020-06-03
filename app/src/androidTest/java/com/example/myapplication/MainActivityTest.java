@@ -4,6 +4,7 @@ import android.view.View;
 
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.action.ViewActions;
+import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -34,6 +35,9 @@ public class MainActivityTest {
     @Rule
     public ActivityScenarioRule<MainActivity> activityScenarioRule
             = new ActivityScenarioRule<>(MainActivity.class);
+
+
+
     @Test
     public void hasTextOnScreen() {
         onView(withId(R.id.Coffee)).check(matches(withText(R.string.coffee_dates)));
@@ -91,11 +95,12 @@ public class MainActivityTest {
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
 
 
-
-
-        onView(withRecyclerView(R.id.RecyclerView).atPosition(3))
+        RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
+        onView(withRecyclerView.atPosition(0))
                 .check(matches(hasDescendant(isDisplayed())));
 
+    }
+
 
 
 
@@ -103,9 +108,10 @@ public class MainActivityTest {
 
     }
 
-    public static RecyclerViewMatcher withRecyclerView(final int recyclerViewId) {
-            return new RecyclerViewMatcher(recyclerViewId);
-    }
 
 
-}
+
+
+
+
+
