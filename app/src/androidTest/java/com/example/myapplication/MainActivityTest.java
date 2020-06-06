@@ -78,19 +78,19 @@ public class MainActivityTest {
 
 
         onView(withText("Settings")).perform(click());
-        onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
+        onView(withId(R.id.settings)).perform(ViewActions.scrollTo()).check(matches(withText(R.string.datingapp_settings)));
         onView(withId(R.id.tabs)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView2)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView3)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView4)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView5)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText3)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText4)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText5)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText6)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText7)).check(matches(isDisplayed()));
+        onView(withId(R.id.textView)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.textView2)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.textView3)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.textView4)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.textView5)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText3)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText4)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText5)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText6)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
+        onView(withId(R.id.editText7)).perform(ViewActions.scrollTo()).check(matches(isDisplayed()));
 
         onView(withText("Matches")).perform(click());
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
@@ -99,10 +99,10 @@ public class MainActivityTest {
 
         RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
 
-
+        onView(withId(R.id.RecyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition(0, scrollTo()));
         onView(withRecyclerView.atPosition(0))
                 .check(matches(hasDescendant(isDisplayed())));
-
+        onView(withId(R.id.RecyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition(1, scrollTo()));
         onView(withRecyclerView.atPosition(1))
                 .check(matches(hasDescendant(isDisplayed())));
 
