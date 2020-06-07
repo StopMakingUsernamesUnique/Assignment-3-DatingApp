@@ -80,17 +80,7 @@ public class MainActivityTest {
         onView(withText("Settings")).perform(click());
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
         onView(withId(R.id.tabs)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView2)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView3)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView4)).check(matches(isDisplayed()));
-        onView(withId(R.id.textView5)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText3)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText4)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText5)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText6)).check(matches(isDisplayed()));
-        onView(withId(R.id.editText7)).check(matches(isDisplayed()));
+
 
         onView(withText("Matches")).perform(click());
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));
