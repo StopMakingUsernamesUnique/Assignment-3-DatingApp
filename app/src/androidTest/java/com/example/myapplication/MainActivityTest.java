@@ -23,6 +23,7 @@ import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.withHint;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.is;
@@ -80,7 +81,16 @@ public class MainActivityTest {
         onView(withText("Settings")).perform(click());
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
         onView(withId(R.id.tabs)).check(matches(isDisplayed()));
-
+        onView(withId(R.id.textView)).check(matches(withText("e")));
+        onView(withId(R.id.textView2)).check(matches(withText("e")));
+        onView(withId(R.id.textView3)).check(matches(withText("e")));
+        onView(withId(R.id.textView4)).check(matches(withText("e")));
+        onView(withId(R.id.textView5)).check(matches(withText("e")));
+        onView(withId(R.id.editText)).check(matches(withHint(R.string.max_distance)));
+        onView(withId(R.id.editText3)).check(matches(withHint(R.string.gender)));
+        onView(withId(R.id.editText4)).check(matches(withHint(R.string.min_age)));
+        onView(withId(R.id.editText5)).check(matches(withHint(R.string.max_age)));
+        onView(withId(R.id.editText7)).check(matches(withHint(R.string.looking_for)));
 
         onView(withText("Matches")).perform(click());
         onView(withId(R.id.RecyclerView)).check(matches(isDisplayed()));

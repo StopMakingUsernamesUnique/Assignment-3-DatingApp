@@ -101,7 +101,7 @@ public class checkValues extends AppCompatActivity {
 
         Distance = (EditText) findViewById(R.id.editText);
         Max = (EditText) findViewById(R.id.editText5);
-        Min = (EditText) findViewById(R.id.editText6);
+        Min = (EditText) findViewById(R.id.editText4);
         Preference = (EditText) findViewById(R.id.editText7);
         Gender = (EditText) findViewById(R.id.editText3);
 

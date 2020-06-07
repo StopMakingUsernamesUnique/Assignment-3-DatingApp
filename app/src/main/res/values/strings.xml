@@ -29,6 +29,11 @@
     <string name="youlike">\"You liked \"</string>
     <string name="like">Liked</string>
     <string name="name">Name</string>
+    <string name="max_distance">Max Distance</string>
+    <string name="gender">Gender</string>
+    <string name="min_age">Min Age</string>
+    <string name="max_age">Max Age</string>
+    <string name="looking_for">Looking For</string>
     <string-array name="Match_Names">
         <item>Jessica</item>
         <item>Mark</item>

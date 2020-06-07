@@ -24,9 +24,9 @@
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:hint="Max Distance"
+            android:layout_marginStart="@dimen/editTextDimen"
+            android:layout_marginTop="@dimen/editTextDimen"
+            android:hint="@string/max_distance"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings"
@@ -36,8 +36,8 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="52dp"
+            android:layout_marginStart="@dimen/textViewMargin"
+            android:layout_marginTop="@dimen/textViewMargin"
             android:text=""
             android:textSize="@dimen/testPad"
             app:layout_constraintStart_toEndOf="@+id/editText"
@@ -47,7 +47,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="52dp"
+            android:layout_marginStart="@dimen/textViewMargin"
             android:layout_marginTop="112dp"
             android:text=""
             android:textSize="@dimen/testPad"
@@ -94,7 +94,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="100dp"
             android:ems="10"
-            android:hint="Gender"
+            android:hint="@string/gender"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings" />
@@ -106,7 +106,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="156dp"
             android:ems="10"
-            android:hint=""
+            android:hint="@string/min_age"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings" />
@@ -118,7 +118,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="216dp"
             android:ems="10"
-            android:hint="Max Age"
+            android:hint="@string/max_age"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings" />
@@ -130,22 +130,12 @@
             android:layout_marginStart="40dp"
             android:layout_marginTop="272dp"
             android:ems="10"
-            android:hint="Looking For"
+            android:hint="@string/looking_for"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/settings" />
 
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="114dp"
-            android:layout_height="41dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="156dp"
-            android:ems="10"
-            android:hint="Min Age"
-            android:inputType="textPersonName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/settings" />
+
 
         <Button
             android:layout_width="wrap_content"

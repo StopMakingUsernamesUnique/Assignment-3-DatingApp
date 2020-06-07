@@ -61,4 +61,6 @@
     <dimen name="Age_MarginTop">260dp</dimen>
     <dimen name="Work_MarginTop">310dp</dimen>
     <dimen name="Bio_MarginTop">355dp</dimen>
+    <dimen name="editTextDimen">40dp</dimen>
+    <dimen name="textViewMargin">52dp</dimen>
 </resources>
