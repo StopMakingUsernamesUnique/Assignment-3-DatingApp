@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,19 +28,24 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     String data1[];
     Boolean data2[];
     String images[];
-    String UID[];
+    String UID[], Lat[], Lon[];
     Context context;
     Button btn;
+
     FirebaseMatchViewModel fb = new FirebaseMatchViewModel();
 
 
 
-    public MyAdapter(Context ct, String[] s1, Boolean[] s2, String[] img, String[] uid){
-    context = ct;
-    data1 = s1;
-    data2= s2;
-    images = img;
-    UID = uid;
+    public MyAdapter(Context ct, String[] s1, Boolean[] s2, String[] img, String[] uid, String[] lat, String[] lon) {
+        context = ct;
+        data1 = s1;
+        data2 = s2;
+        images = img;
+        UID = uid;
+
+        Lat = lat;
+        Lon = lon;
+
     }
 
 
@@ -63,8 +69,19 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             fb.like(UID[position]);
 
         });
+       /* android.location.Location one = new Location("");
+        one.setLongitude(Location[0]);
+        one.setLatitude(Location[1]);
+        double d = Double.parseDouble(Lat[position]);
 
-        holder.text1.setText(data1[position]);
+        android.location.Location two = new Location("");
+        two.setLongitude(d);
+        two.setLatitude(d);
+        if(one.distanceTo(two) > 10){
+            return;
+        }
+ */
+        holder.text1.setText(Lon[position]);
 
         if(data2[position] != null && data2[position]) {
             holder.text2.setText(context.getString(R.string.like));

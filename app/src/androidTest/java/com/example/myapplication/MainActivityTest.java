@@ -82,7 +82,7 @@ public class MainActivityTest {
         onView(withId(R.id.settings)).check(matches(withText(R.string.datingapp_settings)));
         onView(withId(R.id.tabs)).check(matches(isDisplayed()));
 
-       
+
         onView(withId(R.id.editText)).check(matches(withHint(R.string.max_distance)));
         onView(withId(R.id.editText3)).check(matches(withHint(R.string.gender)));
         onView(withId(R.id.editText4)).check(matches(withHint(R.string.min_age)));

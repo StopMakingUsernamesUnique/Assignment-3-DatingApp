@@ -79,6 +79,21 @@ class FirebaseMatchViewModel {
         return UID;
     }
 
+    String[] getLat() {
+        String[] Lat = new String[notes.length];
+        for (int i = 0; i < notes.length; i++) {
+            Lat[i] = notes[i].getLat();
+        }
+        return Lat;
+    }
+    String[] getLong() {
+        String[] Lon = new String[notes.length];
+        for (int i = 0; i < notes.length; i++) {
+            Lon[i] = notes[i].getLongitude();
+        }
+        return Lon;
+    }
+
     void like(String s){
         fb.like(s);
 
