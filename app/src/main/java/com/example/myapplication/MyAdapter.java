@@ -81,7 +81,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             return;
         }
  */
-        holder.text1.setText(Lon[position]);
+        holder.text1.setText(data1[position]);
 
         if(data2[position] != null && data2[position]) {
             holder.text2.setText(context.getString(R.string.like));

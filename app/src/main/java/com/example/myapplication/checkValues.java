@@ -55,24 +55,15 @@ public class checkValues extends AppCompatActivity {
     TextView MinT;
     TextView PreferenceT;
     TextView GenderT;
-    LocationManager locationManager;
-    double longitudeNetwork, latitudeNetwork;
-    Boolean NetworkUpdates;
-
-    public void getLocation(Consumer<Double[]> response) {
 
 
-        Double[] arr = {longitudeNetwork, latitudeNetwork };
-        response.accept(arr);
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
-        NetworkUpdates = false;
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         SPA = new SectionsPageAdapter(getSupportFragmentManager());
         VP = (ViewPager) findViewById(R.id.view_pager);
@@ -195,78 +186,5 @@ public class checkValues extends AppCompatActivity {
     }
 
 
-    private boolean checkLocation() {
-        if (!isLocationEnabled())
-            showAlert();
-        return isLocationEnabled();
-    }
-
-    private void showAlert() {
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setTitle("Enable Location")
-                .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
-                        "use this app")
-                .setPositiveButton("Location Settings", (paramDialogInterface, paramInt) -> {
-                    Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    startActivity(myIntent);
-                })
-                .setNegativeButton("Cancel", (paramDialogInterface, paramInt) -> {
-                });
-        dialog.show();
-    }
-
-    private boolean isLocationEnabled() {
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
-                locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
-    }
-
-    public void EnableNetworkUpdates(View view) {
-
-        if (!checkLocation()) {
-            return;
-        }
-        if (NetworkUpdates) {
-            locationManager.removeUpdates(locationListenerNetwork);
-            Toast.makeText(this, "Network provider Stopped", Toast.LENGTH_LONG).show();
-            NetworkUpdates = false;
-
-        } else {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-            locationManager.requestLocationUpdates(
-                    LocationManager.NETWORK_PROVIDER, 5 * 1000, 10, locationListenerNetwork);
-            Toast.makeText(this, "Network provider started running", Toast.LENGTH_LONG).show();
-            NetworkUpdates = true;
-        }
-    }
-
-        private final LocationListener locationListenerNetwork = new LocationListener() {
-        public void onLocationChanged(Location location) {
-            longitudeNetwork = location.getLongitude();
-            latitudeNetwork = location.getLatitude();
-
-            runOnUiThread(() ->
-
-                    Toast.makeText(checkValues.this, "Location Changed", Toast.LENGTH_LONG).show());
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {
-
-        }
-
-        @Override
-        public void onProviderEnabled(String provider) {
-
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-
-        }
-
-
-    };
 }
 
