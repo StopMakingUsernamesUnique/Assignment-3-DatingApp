@@ -96,10 +96,9 @@ public class MainActivityTest {
 
         RecyclerViewMatcher withRecyclerView = new RecyclerViewMatcher(R.id.RecyclerView);
 
-        onView(withId(R.id.RecyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition(0, scrollTo()));
-        onView(withRecyclerView.atPosition(0))
-                .check(matches(hasDescendant(isDisplayed())));
-        onView(withId(R.id.RecyclerView)).perform(RecyclerViewActions.actionOnItemAtPosition(1, scrollTo()));
+
+               onView(withRecyclerView.atPosition(0)).check(matches(hasDescendant(isDisplayed())));
+
         onView(withRecyclerView.atPosition(1))
                 .check(matches(hasDescendant(isDisplayed())));
 
